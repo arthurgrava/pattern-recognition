@@ -1,0 +1,6 @@
+data = read.csv('/path/to/wbdc.data')
+data[1:1] <- list(NULL)
+matrix = as.matrix(data)
+normalized = scale(matrix, center=TRUE, scale=TRUE)
+pca.cor = princomp(normalized, cor=TRUE, scores=TRUE, covmat=NULL)
+pca.cov = princomp(normalized, cor=FALSE, scores=TRUE, covmat=NULL)
